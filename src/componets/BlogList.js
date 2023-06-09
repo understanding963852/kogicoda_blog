@@ -60,7 +60,7 @@ const BlogList = ({ isAdmin }) => {
       params = { ...params, publish: true };
     }
     axios
-      .get(`http://localhost:3004/posts`, {
+      .get(`https://my-json-server.typicode.com/understanding963852/kogicoda_blog/posts`, {
         //params: params,  //키와 value가 같기 때문에 params로 줄일수 있다
         params,
       })
@@ -80,7 +80,7 @@ const BlogList = ({ isAdmin }) => {
   const deleteBlog = (e, id) => {
     e.stopPropagation();
     console.log("삭제");
-    axios.delete(`http://localhost:3004/posts/${id}`).then(() => {
+    axios.delete(`https://my-json-server.typicode.com/understanding963852/kogicoda_blog/posts/${id}`).then(() => {
       //setPosts((prevPosts) => prevPosts.filter((post) => post.id !== id));
       getPost(1);
     });
