@@ -35,7 +35,7 @@ function BlogForm({ editing }) {
     if (validateForm()) {
       if (editing) {
         axios
-          .patch(`http://localhost:3004/posts/${id}`, {
+          .patch(`https://my-json-server.typicode.com/understanding963852/kogicoda_blog/posts/${id}`, {
             title,
             body,
             publish,
@@ -46,7 +46,7 @@ function BlogForm({ editing }) {
           });
       } else {
         axios
-          .post("http://localhost:3004/posts", {
+          .post("https://my-json-server.typicode.com/understanding963852/kogicoda_blog/posts", {
             title,
             body,
             publish,
@@ -62,7 +62,7 @@ function BlogForm({ editing }) {
 
   useEffect(() => {
     if (editing) {
-      axios.get(`http://localhost:3004/posts/${id}`).then((res) => {
+      axios.get(`https://my-json-server.typicode.com/understanding963852/kogicoda_blog/posts/${id}`).then((res) => {
         console.log(res);
         setTitle(res.data.title);
         setBody(res.data.body);
